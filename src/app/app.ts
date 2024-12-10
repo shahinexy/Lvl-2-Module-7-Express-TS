@@ -7,8 +7,35 @@ const port = 3000
 app.use(express.json())
 app.use(express.text())
 
-//Midlewear
+// router 
+const userRouter = express.Router();
+const courseRouter = express.Router();
 
+app.use('/api/vi/users', userRouter)
+app.use('/api/vi/courses', courseRouter)
+
+
+userRouter.get('/create-user', (req: Request, res: Response)=>{
+  const user = req.body;
+  console.log(user);
+  res.json({
+    success: true,
+    message: "User Created Successfully",
+    data: user
+  })
+})
+
+courseRouter.post("/create-course", (req: Request, res: Response)=>{
+  const course = req.body;
+  console.log(course);
+  res.json({
+    success: true,
+    message: "User Created Successfully",
+    data: course
+  })
+} )
+
+//Midlewear
 const logger = (req: Request, res: Response, next: NextFunction) =>{
   console.log(req.url, req.method, req.hostname);
   next()
