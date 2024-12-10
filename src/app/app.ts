@@ -41,13 +41,40 @@ const logger = (req: Request, res: Response, next: NextFunction) =>{
   next()
 }
 
-app.get('/', logger, (req: Request, res: Response) => {
-  res.send('Hello world vai')
+app.all("*", (req: Request, res: Response)=>{
+  res.status(400).json({
+      success: false,
+      message: "Route not found"
+  })
+})
+
+app.get('/', logger, async (req: Request, res: Response, next: NextFunction) => {
+  try{
+    res.send(something)
+  }catch(error){
+    next(error)
+    // res.status(400).json({
+    //   success: false,
+    //   message: "faild to get data"
+    // })
+  }
 })
 
 app.post('/', logger, (req: Request, res: Response)=>{
 console.log(req.body);
 res.send('Data post success')
+})
+
+
+
+// global error handler
+app.use((error: any, req: Request, res: Response, next: NextFunction)=>{
+  if(error){
+    res.status(400).json({
+      success: false,
+      message: "something went wrong"
+    })
+  }
 })
 
 export default app;
