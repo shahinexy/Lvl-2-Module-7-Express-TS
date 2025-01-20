@@ -2,12 +2,12 @@
 `/api/files/upload-img` <br>
 
 ```diff
-- For testing purpuse send JPG/PNG file from Postman (Key: file, Type: File)
+- For testing purposes send JPG/PNG file from Postman (Key: file, Type: File)
 ```
 
 **Request Body:** 
 ```diff
-Key: data, Type: Text
+- Key: data, Type: Text
 ```
 
 ```
@@ -16,10 +16,4 @@ Key: data, Type: Text
     "folderId": "678e0a8f3cb41ed26ba26e73"
 }
 ```
-```diff
-- For testing purpuse send JPG/PNG file from Postman Key: file, Type: File
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
+
