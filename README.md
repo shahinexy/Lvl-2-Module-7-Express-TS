@@ -16,7 +16,7 @@ Key: data, Type: Text
 }
 ```
 ```diff
-- text in red
+- For testing purpuse send JPG/PNG file from Postman Key: file, Type: File
 + text in green
 ! text in orange
 # text in gray
