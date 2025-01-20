@@ -1,7 +1,8 @@
 **Upload Image: (POST)**
 `/api/files/upload-img` <br>
+
 ```diff
-For testing purpuse send JPG/PNG file from Postman Key: file, Type: File
+- For testing purpuse send JPG/PNG file from Postman Key: file, Type: File
 ```
 
 **Request Body:** 
