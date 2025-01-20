@@ -5,3 +5,5 @@
 # text in gray
 @@ text in purple (and bold)@@
 ```
+
+demo `- This text looks red` demo
